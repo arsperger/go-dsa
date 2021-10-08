@@ -1,26 +1,4 @@
-/*
-
-Set implementation
-
-Set - static (immutable) has only query operations
-
-Mutable or dynamic Set has Operations:
-
-addItem
-deleteItem
-containsItem
-intersect
-union
-
-arsperger 2021
-
-*/
-
-package main
-
-import (
-	"fmt"
-)
+package set
 
 // Set is a set truct
 type Set struct {
@@ -39,7 +17,7 @@ func (s *Set) AddItem(v interface{}) {
 	}
 }
 
-//containsItem returns true if item is in the set
+//returns true if item is in the set
 func (s *Set) containsItem(v interface{}) bool {
 	_, ok := s.setMap[v]
 	return ok
@@ -66,7 +44,7 @@ func (s *Set) Intersect(secondSet *Set) *Set {
 	return newSet
 }
 
-//Union returns union ob both sets
+//Union returns union of both sets
 func (s *Set) Union(secondSet *Set) *Set {
 	newSet := new(Set)
 
@@ -79,19 +57,4 @@ func (s *Set) Union(secondSet *Set) *Set {
 	}
 
 	return newSet
-}
-
-func main() {
-
-	//var testSet *Set
-	testSet := new(Set)
-
-	testSet.New()
-
-	testSet.AddItem(1)
-	testSet.AddItem(2)
-	testSet.AddItem(2)
-
-	fmt.Printf("added to set")
-
 }
