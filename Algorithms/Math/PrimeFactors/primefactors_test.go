@@ -20,7 +20,7 @@ func TestPrimeFactors(t *testing.T) {
 		n int
 		w []int
 	}{
-		{126, []int{2, 3, 3, 7}}, {150, []int{2, 3, 5, 5}},
+		{126, []int{2, 3, 3, 7}}, {150, []int{2, 3, 5, 5}}, {127, []int{127}},
 	}
 
 	for _, idx := range data {
